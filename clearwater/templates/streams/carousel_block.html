@@ -1,0 +1,7 @@
+{% load wagtailimages_tags %}
+<div class="carousel">
+    {% for image in self.images %}
+    {% image image.image original as img %}
+    <a class="carousel-item" href="#{{ forloop.counter }}"><img src="{{ img.url }}" alt="{{ img.alt }}"></a>
+    {% endfor %}
+</div>

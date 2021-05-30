@@ -1,0 +1,217 @@
+#video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -10;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: -5;
+}
+
+.audio-wrapper {
+    position: absolute;
+    bottom: 15%;
+    left: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.audio {
+    font-size: 26px;
+}
+
+.content {
+    position: absolute;
+    width: 85%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 50;
+}
+
+#hero,
+#block {
+    height: 90vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.snowbird-title,
+.amenities-title,
+.about-title {
+    margin-top: 0;
+}
+
+#hero.container {
+    width: 100%;
+}
+
+.hero-title {
+    font-size: 3rem;
+    color: white;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+}
+
+.snowbird {
+    padding: 3rem 0;
+}
+
+.testimonials .row,
+.about .row,
+.snowbird .row {
+    margin-bottom: 0;
+}
+
+.snowbird-title {
+    color: #284f28;
+    font-size: 2.7rem;
+    margin-bottom: 0;
+}
+
+.snowbird-subtitle {
+    margin-top: 1.2rem;
+    margin-bottom: 2rem;
+    font-size: 1.75rem;
+}
+
+.snowbird-body {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.img-wrapper {
+    height: 300px;
+    overflow: hidden;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+#amenities {
+    padding: 3rem 2.5rem;
+    background-color: #f6edd9;
+    margin: 1rem auto;
+}
+
+.amenities-title {
+    color: #284f28;
+    font-size: 2.7rem;
+    margin-bottom: 0;
+}
+
+.rates-body,
+.about-body,
+.amenities-body {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.amenities-subtitle {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.rates-title,
+.testimonials-title,
+.about-title {
+    font-size: 2.7rem;
+    color: #284f28;
+    margin-top: 0;
+}
+
+.about {
+    padding: 3rem 2.5rem;
+}
+
+.testimonials {
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+    margin: 1rem auto 0 auto;
+}
+
+.rates {
+    padding: 3rem 2.5rem;
+}
+
+.rates-body:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.rates-body:first-child {
+    margin-top: 2.25rem;
+}
+
+.rates-subtitle {
+    color: #284f28;
+}
+
+.spacer {
+    margin-bottom: 1rem;
+}
+
+.card-img-container {
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-img-container img {
+    height: 60px;
+    width: 60px;
+}
+
+.testimonial-cards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.testimonial-cards .card {
+    height: 100%;
+}
+
+@media screen and (min-width: 1450px) {
+    #hero {
+        height: 75vh;
+    }
+}
+
+@media screen and (max-width: 1060px) {
+   .hero-title {
+       font-size: 2.5rem;
+   }
+    .testimonial-cards .card {
+        height: auto;
+   }
+}
+
+@media screen and (max-width: 600px) {
+   .hero-title {
+       font-size: 1.75rem;
+   }
+
+   .hero-subtitle {
+       font-size: 1.2rem;
+   }
+}

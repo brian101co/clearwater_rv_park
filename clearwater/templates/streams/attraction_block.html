@@ -1,0 +1,15 @@
+{% load wagtailimages_tags %}
+<div class="card horizontal">
+  <div class="card-image">
+    {% image self.image fill-450x300 as img %}
+    <img src="{{ img.url }}" alt="{{ img.alt }}" />
+  </div>
+  <div class="card-stacked">
+    <div class="card-content">
+      <h4 class="semi-bold green-text text-darken-3">{{ self.title }}</h4>
+      <div class="divider"></div>
+      <p class="" style="font-size: 1.2rem; margin-bottom: 1rem;">{{ self.text }}</p>
+      <a href="{{ self.link }}" class="waves-effect waves-light btn green">Check It Out</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+{% load menu_tags %}
+{% get_menu "header" as navigation %}
+<header>
+  <div class="contact-banner green darken-3">
+    <div class="container">
+      <address>
+        <p class="white-text">Mississippi's Best Kept Secret</p>
+        <span class="pipe white-text">|</span>
+        <a class="white-text" href="tel:6017498142">(601) 749-8142</a>
+        <span class="pipe white-text">|</span>
+        <a href="#contact-page" class="white-text">Contact Us Today!</a>
+      </address>
+    </div>
+  </div>
+  <nav class="white">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo grey-text text-darken-3">Clearwater RV Park</a>
+        <a href="#" data-target="mobile" class="sidenav-trigger right">
+          <i class="material-icons dp48 grey-text text-darken-3">menu</i>
+        </a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          {% for item in navigation.menu_items.all %}
+          <li><a href="{{ item.link_page.url }}" class="grey-text text-darken-3">{{ item.link_title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <ul class="sidenav" id="mobile">
+    {% for item in navigation.menu_items.all %}
+    <li><a href="{{ item.link_page.url }}" class="grey-text text-darken-3">{{ item.link_title }}</a></li>
+    {% endfor %}
+  </ul>
+</header>

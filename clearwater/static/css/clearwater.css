@@ -1,0 +1,61 @@
+html {
+  scroll-behavior: smooth;
+}
+.contact-banner .container {
+    display: flex;
+    justify-content: flex-end;
+}
+.contact-banner address {
+    display: flex;
+    align-items: center;
+    font-size: 0.5rem;
+}
+.contact-banner address p {
+    margin: 0.5rem 0;
+}
+.contact-banner .pipe {
+    margin: 0 0.5rem;
+    font-style: normal;
+}
+.contact-banner a:link {
+    font-style: normal;
+    color: black;
+}
+header nav .brand-logo {
+    float: left !important;
+    left: 0;
+    transform: translate(0);
+}
+/*********************************
+              FOOTER
+*********************************/
+.contact,
+.sitemap-container,
+.office-hours {
+    padding: 2rem 0 1rem 0;
+}
+.contact div,
+.office-hours div {
+    margin-top: 0.3rem;
+}
+.footer-copyright .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+}
+.fb-link {
+    margin-right: 1rem;
+}
+.sitemap {
+    margin: 0;
+}
+.sitemap li:not(:first-child) {
+    margin-top: 0.3rem;
+}
+
+@media(min-width: 375px) {
+    .contact-banner address {
+        font-size: 0.7rem;
+    }
+}

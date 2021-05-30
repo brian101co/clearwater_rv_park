@@ -1,0 +1,72 @@
+{% extends 'base.html' %} 
+
+{% load static wagtailimages_tags wagtailcore_tags %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/amenities_page.css' %}" />
+{% endblock %} 
+
+{% block content %}
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+        <header class="banner">
+          <h1 class="center-align green-text text-darken-3">Our {{ page.page_title }}</h1>
+          <h2 class="subtitle grey-text text-darken-2 center-align">
+            Created just for you so you can relax and enjoy the quiet country
+            atmosphere.
+          </h2>
+          <div class="divider"></div>
+          <div class="row carousel-section">
+            <div class="col s12 m6">
+              <p class="carousel-text">
+                At Clearwater RV Park, we work hard to make sure you have a
+                peaceful environment. We hope you will enjoy listening to the
+                waterwheel or the crackling campfires. Flip through some of the
+                pictures to see what we have to offer or scroll down to learn
+                more.
+              </p>
+            </div>
+            <div class="col s12 m6">
+              {% for block in page.section_body %} 
+                {% include_block block %} 
+              {% endfor %}
+            </div>
+          </div>
+        </header>
+        <div class="amenity-icon-strip">
+          <div class="row">
+            <div class="col s6 m4 center-icon">
+              <img src="{% static 'imgs/svg1.svg' %}" alt="" ">
+            </div>
+            <div class="col s6 m4 center-icon">
+              <img src="{% static 'imgs/svg2.svg' %}" alt="" ">
+            </div>
+            <div class="col s6 m4 center-icon">
+              <img src="{% static 'imgs/svg3.svg' %}" alt="" ">
+            </div>
+            <div class="col s6 m4 center-icon">
+              <img src="{% static 'imgs/svg4.svg' %}" alt="" ">
+            </div>
+            <div class="col s6 m4 center-icon">
+              <img src="{% static 'imgs/svg5.svg' %}" alt="" ">
+            </div>
+            <div class="col s6 m4 center-icon">
+              <img src="{% static 'imgs/svg66.svg' %}" alt="" ">
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          {% for block in page.main_content %} 
+            {% include_block block %} 
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+{% endblock %} 
+{% block extra_js %}
+<script src="{% static 'js/amenities_page.js' %}"></script>
+{% endblock %}

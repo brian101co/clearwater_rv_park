@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/welcome_page.css' %}" />
+{% endblock %}
+
+{% block content %}
+<section id="hero" class="container">
+  <div class="content container">
+    <h1 class="hero-title">{{ page.hero_section_text }}</h1>
+    <p class="grey-text text-lighten-2 hero-subtitle">{{ page.hero_section_subtitle_text }}</p>
+    <a class="waves-effect waves-light btn green" href="#welcome">Learn More</a>
+  </div>
+  <video id="video" autoplay="true" muted="true" loop="true" poster="{% static 'img/waterwheel.jpg' %}">
+    <source src="{% static 'media/clearwater_banner_video.mp4' %}" type="video/mp4" />
+    <source src="{% static 'media/clearwater_banner_video.webm' %}" type="video/webm" />
+  </video>
+  <div class="overlay" aria-hidden="true"></div>
+  <div class="audio-wrapper z-depth-3 green pulse btn-floating">
+    <i class="fa fa-volume-up hide" aria-hidden="true"></i>
+    <i class="fa fa-volume-off" aria-hidden="true"></i>
+  </div>
+</section>
+
+<section class="container snowbird" id="welcome">
+  <div class="row" data-aos="slide-left" data-aos-offset="100">
+    <h2 class="snowbird-title center-align">Snowbirds Are Welcome Here</h2>
+    <h3 class="snowbird-subtitle grey-text text-darken-1 center-align">Quiet Never Sounded So Good</h3>
+    <div class="col s12 l6">
+      <div>
+        <p class="snowbird-body grey-text text-darken-2">
+          Traveling to escape the relentless northern winters? Our RV park and campground is an excellent home away from home to wait out the winter season. Our climate is temperate during the coldest winter months and our property uniquely caters to folks looking to escape. Whether you’re stopping in for a weekend on the road or plan to stay here all season long, we warmly welcome you with open
+          arms.
+        </p>
+      </div>
+    </div>
+    <div class=" col s12 l6">
+      <div class="img-wrapper">
+        <img src="{% static 'img/waterwheel.jpg' %}" alt="Waterwheel nestled between the trees.">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="amenities" class="container" data-aos="slide-right" data-aos-offset="100">
+  <div class="row" >
+    <div class="col s12">
+      <h2 class="amenities-title center-align">Exceptional RV Park Amenities</h2>
+      <h3 class="amenities-subtitle grey-text text-darken-1 center-align">We Have Everything You Need for Your RV Getaway</h3>
+      <p class="amenities-body grey-text text-darken-2 center-align">
+        Our RV park and campground offers an array of amenities that create a luxurious experience for our guests. Our site includes full hook-ups, both water and electric, and guests also enjoy access to our
+        finished bathhouse and laundry room for a more comfortable stay. Need firewood, propane, or access to WiFi? We have you covered. We’ve thought of everything to make sure your stay is worry, hassle, and stress-free. Your convenience is our number one focus. Sit back and unwind among fully manicured surroundings, and soak up the quietness that surrounds you.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="container about" data-aos="slide-left" data-aos-offset="100">
+  <div class="row">
+    <div class="col s12 xl6">
+      <img src="{% static 'img/new_orleans.png' %}" alt="City of New Orleans" class="responsive-img">
+
+    </div>
+    <div class="col s12 xl6">
+      <h2 class="about-title">About The Area</h2>
+      <p class="about-body grey-text text-darken-2">
+        Located a little under an hour from Mississippi’s gorgeous sandy beaches, our RV park offers you the quietness of the country and the amenities of the big city. Explore nearby golf courses or head over to our farmer’s market shops for fresh produce, there are lots to do and see in the area (link to your ‘attractions’ page). Whether you want to grab a delicious seafood dinner out or if
+        you’d like to take in dinner and a show, you can do it all with a quick drive from our RV campground.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class=" container testimonials">
+  <h2 class="testimonials-title center-align">Hear What Our Guests Have To Say About Us</h2>
+  <div class="row testimonial-cards" data-aos="fade-up">
+    <div class="col s12 xl4">
+        <div class="card ">
+          <div class="card-img-container">
+            <img src="{% static 'img/diane.png' %}">
+            <span class="card-title">Diane Schlyer-Austin</span>
+          </div>
+          <div class="card-content">
+            <p>This place is a true gem! We went here last weekend and loved our stay! The owner is super knowledgeable and friendly, and at check in drove us right to our spacious spot and even helped us level the trailer(we are newbies). Very clean, and peaceful setting!</p>
+          </div>
+        </div>
+    </div>
+    <div class="col s12 xl4">
+      <div class="card">
+        <div class="card-img-container">
+          <img src="{% static 'img/nick_wheeler.png' %}">
+          <span class="card-title">Nick Wheeler</span>
+        </div>
+        <div class="card-content">
+          <p>Awesome and Helpful owner! We stopped here for our first ever 5th wheel setup. He helped get us all straightened out and setup. We are so grateful for him and his park is peaceful and beautiful!</p>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 xl4">
+      <div class="card">
+        <div class="card-img-container">
+          <img src="{% static 'img/richie_fitts.png' %}">
+          <span class="card-title">Richie Fitts</span>
+        </div>
+        <div class="card-content">
+          <p>Clean, quiet place to camp. Perfect for hanging around the camper. Sites are level though unpaved. Full Hookups. We didn't use the bathhouses so am unable to comment on that. Very few other campers there during our stay.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container rates">
+  <div class="row">
+    <h2 class="center-align rates-title">Booking and Rates</h2>
+    <div class="col s12 m6">
+      <p class="rates-body grey-text text-darken-2">
+        Schedule your short or long-term RV getaway by calling 601-749-8142 to make a reservation. Please let us know if you have any questions or concerns for us, we’re happy to help.
+      </p>
+      <p class="rates-body grey-text text-darken-2">
+        Rates are based on 1 RV with 2 adults & 2 children under 12 per site with full hookup. $3.00/additional adult or child per night.
+      </p>
+      <p class="rates-body grey-text text-darken-2">
+        Prices subject to change.
+      </p>
+
+      <a class="waves-effect waves-light btn green" href="tel:6017498142">Call Now</a>
+
+
+    </div>
+    <div class="col s12 m6">
+      <ul class="collection with-header">
+        <li class="collection-header">
+          <h5 class="rates-subtitle">Rates</h5>
+        </li>
+        <li class="collection-item grey-text text-darken-2">DAILY: 30/50 amp $32.10</li>
+        <li class="collection-item grey-text text-darken-2">WEEKLY: 30/50 amp $202.00</li>
+        <li class="collection-item grey-text text-darken-2">MONTHLY: 30/50 amp $330.00 metered electric, sewer & water</li>
+        <li class="collection-item grey-text text-darken-2">MONTHLY: $570 includes electric, sewer, & water</li>
+        <li class="collection-item grey-text text-darken-2">
+          SNOWBIRD, SEASONAL, and LONG-TERM SPECIALS:
+          <p>
+            Please Call 601-749-8142 To Obtain Rate Quotes
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+
+{% block extra_js %}
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var video = document.querySelector("#video");
+    var volumeOn = document.querySelector(".fa-volume-up");
+    var volumeOff = document.querySelector(".fa-volume-off");
+    var weatherSection = document.querySelector("#weather");
+
+    AOS.init({
+      disable: 'mobile',
+      startEvent: 'DOMContentLoaded',
+    });
+
+    document.querySelector(".audio-wrapper").addEventListener("click", function (event) {
+      event.stopPropagation();
+      video.muted = !video.muted;
+      volumeOff.classList.toggle("hide");
+      volumeOn.classList.toggle("hide");
+    });
+  });
+</script>
+{% endblock %}

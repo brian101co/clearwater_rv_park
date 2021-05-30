@@ -1,0 +1,38 @@
+
+.contact-banner .container {
+    display: flex;
+    justify-content: flex-end;
+}
+.contact-banner address {
+    display: flex;
+    align-items: center;
+    font-size: 0.5rem;
+}
+.contact-banner address p {
+    margin: 0.5rem 0;
+}
+.contact-banner .pipe {
+    margin: 0 0.5rem;
+    font-style: normal;
+}
+.contact-banner a:link {
+    font-style: normal;
+    color: black;
+}
+header nav .brand-logo {
+    float: left !important;
+    left: 0;
+    transform: translate(0);
+}
+.footer-copyright p {
+    padding: 2rem 0;
+    margin-bottom: 0;
+}
+.sitemap li:not(:first-child) {
+    margin-top: 0.5rem;
+}
+@media(min-width: 375px) {
+    .contact-banner address {
+        font-size: 0.7rem;
+    }
+}

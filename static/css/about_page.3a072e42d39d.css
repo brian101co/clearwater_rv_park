@@ -1,0 +1,9 @@
+.main-text img {
+    margin-top: 0.7rem;
+    margin-right: 1rem;
+    width: 400px;
+}
+
+.main-text > p:first-child {
+    margin-top: 0;
+}

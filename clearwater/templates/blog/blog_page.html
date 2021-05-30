@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+
+{% load wagtailimages_tags wagtailcore_tags %}
+
+{% block extra_css %}
+<style>
+    .spacer {
+        margin-right: 0.8rem;
+    }
+
+    #header picture img {
+        border-radius: 16px;
+    }
+
+    article,
+    aside {
+        margin-top: 2rem;
+    }
+
+    .search-box {
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+
+    aside h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .collection {
+        border: none;
+    }
+
+    .collection-item {
+        padding-left: 5px !important;
+    }
+
+    .collection .collection-item:last-child {
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    span.badge {
+        margin-left: 0;
+        margin-right: 1rem;
+        float: left;
+        margin-top: 0.8rem;
+    }
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+    .sidebar {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 16px;
+    }
+      
+</style>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col s12 l9">
+                <article>
+                    <section id="header">
+                        <picture>
+                            {% image page.preview_image fill-1000x500 as large_image %}
+                            <source srcset="{{ large_image.url }}" media="(min-width: 1000px)">
+                            {% image page.preview_image fill-800x550 as small_image %}
+                            <img src="{{ small_image.url }}" alt="{{ small_image.alt }}" class="responsive-img">
+                        </picture>
+                        <h1 class="grey-text text-darken-3">{{ page.post_title }}</h1>
+                        <p>
+                            <span class="grey-text text-darken-2">
+                                <span class="spacer ">by {{ page.author }}</span> 
+                                <span class="spacer">{{ page.published_date|date:"F j, Y" }}</span>
+                                <span>{{ page.get_read_time }}</span>
+                            </span>
+                            <span class="right grey-text text-darken-2">
+                                {% for tag in page.tags.all %}
+                                    <a href="#">{{ tag|upper }}</a>
+                                {% endfor %}
+                            </span>
+                        </p>
+                        <div class="divider"></div>
+                    </section>
+                    <section id="content">
+                        {% for block in page.main_content %}
+                            {% include_block block %}
+                        {% endfor %}
+                    </section>
+                </article>
+                <div class="divider end-of-article"></div>
+                <section>
+                    <h2>Related Posts</h2>
+                    <article>
+
+                    </article>
+                </section>
+            </div>
+            <div class="col s12 l3 sidebar-container">
+                <aside class="sidebar">
+                    <form action="." method="POST">
+                        <div class="input-field search-box">
+                            <input placeholder="Search" id="search_query" type="text" class="validate">
+                            <label for="first_name" class="hide">Search</label>
+                        </div>
+                    </form>
+                    <h2>Categories</h2>
+                    <div class="collection">
+                        <a href="#!" class="collection-item grey-text text-darken-2">RVing</a>
+                        <a href="#!" class="collection-item grey-text text-darken-2">Guides</a>
+                        <a href="#!" class="collection-item grey-text text-darken-2">Attractions</a>
+                        <a href="#!" class="collection-item grey-text text-darken-2">Reviews</a>
+                    </div>
+                    <h2>Tags</h2>
+                    <div class="tag-container clearfix">
+                        <span class="new badge grey lighten-2 grey-text text-darken-2" data-badge-caption="Camping"></span>
+                        <span class="new badge grey lighten-2 grey-text text-darken-2" data-badge-caption="Outdoors"></span>
+                        <span class="new badge grey lighten-2 grey-text text-darken-2" data-badge-caption="Guide"></span>
+                    </div>
+                    <h2>Social Media</h2>
+                </aside>        
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    var mainContentHieght = document.querySelector('.l9 article').getBoundingClientRect().height;
+    
+    if ( window.innerWidth > 875 ) {
+        document.querySelector('.sidebar-container').setAttribute("style", `height:${mainContentHieght}px`)
+    }
+
+    document.querySelectorAll('#content p').forEach((para) => {
+        para.classList.add('flow-text')
+    });
+</script>
+{% endblock %}

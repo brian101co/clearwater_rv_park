@@ -1,0 +1,87 @@
+.subtitle {
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.carousel {
+  height: 300px !important;
+}
+
+.amenity-icon-strip {
+  margin-bottom: 4rem;
+  padding: 2rem;
+}
+
+.amenity-icon-strip .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-stacked h4.semi-bold {
+  font-weight: 600;
+}
+
+.card-stacked .divider {
+  margin-bottom: 0.75rem;
+}
+
+.center-icon {
+  display: flex;
+  justify-content: center;
+}
+
+.center-icon img {
+  height: 200px;
+  width: 200px;
+}
+
+.carousel-section {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.carousel-text {
+  font-size: 1.3rem;
+}
+
+.card div.card-content p {
+  font-size: 1.25rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .card div.card-content {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .card {
+    margin-top: 2.5rem;
+  }
+
+  .card div.card-content h4 {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .banner h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .subtitle {
+    margin-top: 0;
+    font-size: 1.3rem;
+  }
+
+  .center-icon img {
+    height: 150px;
+    width: 150px;
+  }
+
+  .amenity-icon-strip {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
