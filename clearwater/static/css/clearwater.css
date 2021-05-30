@@ -53,6 +53,9 @@ header nav .brand-logo {
 .sitemap li:not(:first-child) {
     margin-top: 0.3rem;
 }
+.copyright-year {
+    margin: 0 0.4rem;
+}
 
 @media(min-width: 375px) {
     .contact-banner address {

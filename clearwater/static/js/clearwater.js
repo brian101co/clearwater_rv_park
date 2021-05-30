@@ -1,14 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.dropdown-trigger');
-    var mobileMenu = document.querySelectorAll('.sidenav');
+    var mobileMenu = document.querySelector('.sidenav');
+    var copyrightYear = document.querySelector('.copyright-year');
+    var mobileMenuInstance = M.Sidenav.init(mobileMenu);
 
-    
+    copyrightYear.innerText = new Date().getFullYear();
 
-    var mobileMenuInstances = M.Sidenav.init(mobileMenu);
-    var instances = M.Dropdown.init(elems, {
-        coverTrigger: false,
-        hover: true,
-    });
-
-    console.log(instances);
+    for (let menuItem of mobileMenu.children) {
+        menuItem.addEventListener("click", function() {
+            mobileMenuInstance.close();
+        });
+    }
 });
