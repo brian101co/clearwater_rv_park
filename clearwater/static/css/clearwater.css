@@ -31,12 +31,20 @@ header nav .brand-logo {
 *********************************/
 .contact,
 .sitemap-container,
-.office-hours {
+.office-hours,
+.weather-container {
     padding: 2rem 0 1rem 0;
 }
 .contact div,
 .office-hours div {
     margin-top: 0.3rem;
+}
+.weather-container p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.4rem;
+    margin-top: 0.4rem;
 }
 .footer-copyright .container {
     display: flex;

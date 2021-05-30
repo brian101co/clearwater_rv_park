@@ -5,26 +5,18 @@
     <div class="container">
   <div class="row">
     <div class="col s12 m4 l4">
-      <div class="contact">
-        <h5 class="white-text">Contact Info</h5>
-        <address class="white-text">
+      <div class="contact center-align white-text">
+        <h5>Contact Info</h5>
+        <address>
           <div>1505 Ceasar Rd.</div>
           <div>Carriere, MS 39426</div>
         </address>
-        <div class="white-text">P: 601-749-8142</div>
-        <div><a class="white-text" style="text-decoration: underline;" href="mailto:clearwaterrv@gmail.com">clearwaterrv@gmail.com</a></div>
+        <div>P: 601-749-8142</div>
+        <div><a style="text-decoration: underline;" href="mailto:clearwaterrv@gmail.com">clearwaterrv@gmail.com</a></div>
       </div>
     </div>
-
-    <div class="col s12 m4 l3">
-      <div class="office-hours white-text">
-        <h5 class="white-text">Office Hours</h5>
-        <p>We're open 24 hours. If we are not at the office, please call and we will be there shortly.</p>
-      </div>
-    </div>
-
-    <div class="col s12 m4 l2 offset-l2">
-      <div class="sitemap-container">
+    <div class="col s12 m4 l4">
+      <div class="sitemap-container center-align">
         <h5 class="white-text">Sitemap</h5>
         <ul class="sitemap">
           {% for item in navigation.menu_items.all %}
@@ -37,6 +29,12 @@
             {% endif %}
           {% endfor %}
         </ul>
+      </div>
+    </div>
+    <div class="col s12 m4 l4">
+      <div class="office-hours white-text center-align">
+        <h5 class="white-text">Office Hours</h5>
+        <p>We're open 24 hours. If we are not at the office, please call and we will be there shortly.</p>
       </div>
     </div>
   </div>

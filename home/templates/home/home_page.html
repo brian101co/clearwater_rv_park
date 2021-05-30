@@ -158,10 +158,11 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    var video = document.querySelector("#video");
-    var volumeOn = document.querySelector(".fa-volume-up");
-    var volumeOff = document.querySelector(".fa-volume-off");
-    var weatherSection = document.querySelector("#weather");
+    let video = document.querySelector("#video");
+    let volumeOn = document.querySelector(".fa-volume-up");
+    let volumeOff = document.querySelector(".fa-volume-off");
+    let footerCols = document.querySelectorAll("footer .col");
+    let footerRowEl = document.querySelector("footer .row");
 
     AOS.init({
       disable: 'mobile',
@@ -174,6 +175,36 @@
       volumeOff.classList.toggle("hide");
       volumeOn.classList.toggle("hide");
     });
+
+    fetch("/api/weather/")
+      .then(function(response) {
+         return response.json(); 
+      })
+      .then(function(response) {
+        for (let col of footerCols) {
+          col.className = "col s12 m6 l3";
+        }
+
+        const conditions = response.current.condition;
+        const currentWeather = response.current;
+        const weatherCol = document.createElement("div");
+        weatherCol.className = "col s12 m6 l3";
+        weatherCol.innerHTML = `
+                                <div class="weather-container white-text center-align">
+                                  <h5>Current Park Weather</h5>
+                                  <p>
+                                    <img src="http:${conditions.icon}" />
+                                    ${conditions.text}
+                                  </p>
+                                  <p>Feels like ${currentWeather.feelslike_f} &deg; F</p>
+                                  <p>Wind: ${currentWeather.wind_mph} mph</p>
+                                </div>
+                              `;
+        footerRowEl.append(weatherCol);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
   });
 </script>
 {% endblock %}

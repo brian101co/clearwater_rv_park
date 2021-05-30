@@ -3,11 +3,15 @@ import json
 
 from django.shortcuts import render
 from django.http import JsonResponse
-from django.conf import settings
+from clearwater.settings import base
 
 def get_current_weather(request):
-    api_key = settings.API_KEY
-    url = f"http://api.openweathermap.org/data/2.5/weather?zip=39426&units=imperial&appid={api_key}"
-    r = requests.get(url=url)
-    return JsonResponse(r.json())
+    response = requests.get("https://api.weatherapi.com/v1/current.json",
+        params={
+            'key': base.WEATHER_API_KEY,
+            'q': "39426",
+            'aqi': "yes",
+        }
+    )
+    return JsonResponse(response.json())
     
