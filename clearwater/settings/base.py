@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     'search',
     'about',
     'streams',
-    'blog',
+    # 'blog',
     'page',
     'menus',
     'apis',
