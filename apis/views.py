@@ -12,5 +12,7 @@ def get_current_weather(request):
             'q': "39426",
         }
     )
-    return JsonResponse(response.json())
+    if response.status_code == 200:
+        return JsonResponse(response.json())
+    return JsonResponse({"error": "Missing API Key"}, status=500)
     
