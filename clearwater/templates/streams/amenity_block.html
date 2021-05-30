@@ -1,12 +1,14 @@
 {% load wagtailimages_tags %}
-<div class="card horizontal z-depth-0">
+<div class="card horizontal">
+  {% if self.image %}
   <div class="card-image">
-    {% image self.image fill-450x300 as img %}
+    {% image self.image fill-300x200 as img %}
     <img src="{{ img.url }}" alt="{{ img.alt }}" class="responsive-img" />
   </div>
+  {% endif %}
   <div class="card-stacked">
     <div class="card-content">
-      <h4 class="semi-bold green-text text-darken-3">{{ self.title }}</h4>
+      <h5 class="semi-bold green-text text-darken-3">{{ self.title }}</h5>
       <div class="divider"></div>
       <p class="">{{ self.text }}</p>
     </div>

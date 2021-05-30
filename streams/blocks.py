@@ -53,7 +53,8 @@ class AttractionBlock(blocks.StructBlock):
 
 class AmenityBlock(blocks.StructBlock):
     image = ImageChooserBlock(
-        help_text="Image displayed on the side for the amenity."
+        help_text="Image displayed on the side for the amenity.",
+        required=False,
     )
     title = blocks.CharBlock(
         max_length=60,
