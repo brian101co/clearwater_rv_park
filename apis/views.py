@@ -10,7 +10,6 @@ def get_current_weather(request):
         params={
             'key': base.WEATHER_API_KEY,
             'q': "39426",
-            'aqi': "yes",
         }
     )
     return JsonResponse(response.json())
