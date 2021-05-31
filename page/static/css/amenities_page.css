@@ -50,11 +50,6 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .card div.card-content {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-
   .card {
     margin-top: 2.5rem;
   }

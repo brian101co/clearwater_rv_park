@@ -1,6 +1,9 @@
 html {
   scroll-behavior: smooth;
 }
+nav .brand-logo {
+    font-size: 1.75rem;
+}
 .contact-banner .container {
     display: flex;
     justify-content: flex-end;
@@ -68,5 +71,9 @@ header nav .brand-logo {
 @media(min-width: 375px) {
     .contact-banner address {
         font-size: 0.7rem;
+    }
+
+    nav .brand-logo {
+        font-size: 1.95rem;
     }
 }
