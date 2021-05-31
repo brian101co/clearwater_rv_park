@@ -35,7 +35,6 @@
     </div>
   </nav>
   <ul class="sidenav" id="mobile">
-    <li><a href="/#rates" class="grey-text text-darken-3">Rates</a></li>
     {% for item in navigation.menu_items.all %}
         {% if item.link_anchor %}
             <li><a href="{{ item.link_anchor }}" class="grey-text text-darken-3">{{ item.link_title }}</a></li>
