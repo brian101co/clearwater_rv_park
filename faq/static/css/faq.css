@@ -2,3 +2,21 @@
 .collapsible-body {
     font-size: 1.2rem;
 }
+@media(max-width: 960px) {
+    .main-title {
+        font-size: 3rem;
+    }
+}
+@media(max-width: 472px) {
+    section.container {
+        width: 98%;
+    }
+    .main-title {
+        font-size: 2.7rem;
+    }
+}
+@media(max-width: 352px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+}
