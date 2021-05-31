@@ -1,36 +1,42 @@
 .subtitle {
   font-size: 2rem;
+  margin-top: 0;
   font-weight: normal;
   margin-bottom: 2.5rem;
 }
-
 .card-image img {
   object-fit: cover;
   object-position: center;
   height: 100%;
 }
-
-@media screen and (max-width: 1024px) {
-
+@media(max-width: 960px) {
+    .main-title {
+        font-size: 3rem;
+    }
+    .subtitle {
+      font-size: 1.75rem;
+    }
 }
-
 @media screen and (max-width: 512px) {
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-
   .content .card.horizontal {
     flex-direction: column;
   }
-
   .content .card.horizontal .card-image {
     /* height: 250px; */
     max-width: 100%
   }
-
   .subtitle {
     margin-top: 0;
     font-size: 1.3rem;
   }
+}
+@media(max-width: 472px) {
+    .main-title {
+        font-size: 2.7rem;
+    }
+}
+@media(max-width: 352px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
 }
