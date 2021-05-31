@@ -204,14 +204,66 @@
     .testimonial-cards .card {
         height: auto;
    }
+   .rates-body:first-child {
+        margin-top: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 772px) {
+    .about {
+       padding-bottom: 2rem;
+   }
+    .about-img-container {
+        padding-bottom: 0.8rem;
+    }
+    .rates {
+        padding-top: 2rem;
+    }
 }
 
 @media screen and (max-width: 600px) {
    .hero-title {
        font-size: 1.75rem;
    }
-
    .hero-subtitle {
        font-size: 1.2rem;
    }
+}
+
+@media screen and (max-width: 450px) {
+    .about,
+    .testimonials,
+    .rates {
+        padding: 0;
+    }
+    .testimonials {
+        margin-bottom: 1rem;
+    }
+    .snowbird {
+        padding: 3rem 0 0 0;
+    }
+    #amenities {
+        margin-bottom: 2rem;
+    }
+    .snowbird-title,
+    .amenities-title,
+    .about-title,
+    .testimonials-title,
+    .rates-title {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    .snowbird-subtitle,
+    .amenities-subtitle {
+        font-size: 1.5rem;
+    }
+    .snowbird-body,
+    .about-body {
+        padding-bottom: 1rem;
+        text-align: center;
+    }
+    .rates-list {
+        margin-top: 1.5rem;
+    }
 }
