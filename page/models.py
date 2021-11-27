@@ -49,13 +49,13 @@ class AttractionsPage(Page):
         help_text="Main title for the page."
     )
 
-    main_content = StreamField([
+    attractions = StreamField([
         ('Attraction', blocks.AttractionBlock())
     ], null=True, blank=True)
 
     content_panels = Page.content_panels + [
         FieldPanel("page_title"),
-        StreamFieldPanel("main_content"),
+        StreamFieldPanel("attractions"),
     ]
 
 class RatesPage(Page):
