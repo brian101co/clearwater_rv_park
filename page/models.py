@@ -13,6 +13,7 @@ class AmenitiesPage(Page):
         blank=False,
         help_text="Main title for the page."
     )
+
     banner_image = models.ForeignKey(
         'wagtailimages.Image',
         blank=False,
@@ -22,22 +23,22 @@ class AmenitiesPage(Page):
         help_text="The banner image at the top of the page."
     )
 
-    section_body = StreamField([
+    amenities_carousel = StreamField([
         ('Carousel', blocks.CarouselBlock()),
     ],
         null=True,
         blank=True,
     )
 
-    main_content = StreamField([
+    amenities = StreamField([
         ('Amenity', blocks.AmenityBlock())
     ], null=True, blank=True)
 
     content_panels = Page.content_panels + [
         FieldPanel("page_title"),
         ImageChooserPanel("banner_image"),
-        StreamFieldPanel("section_body"),
-        StreamFieldPanel("main_content"),
+        StreamFieldPanel("amenities_carousel"),
+        StreamFieldPanel("amenities"),
     ]
     
 
