@@ -30,7 +30,6 @@ INSTALLED_APPS = [
     'streams',
     # 'blog',
     'page',
-    'menus',
     'apis',
     'faq',
 
@@ -50,7 +49,7 @@ INSTALLED_APPS = [
     'modelcluster',
     'taggit',
     'django_extensions',
-    'condensedinlinepanel',
+    'wagtailmenus',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -87,6 +86,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'wagtailmenus.context_processors.wagtailmenus',
             ],
         },
     },

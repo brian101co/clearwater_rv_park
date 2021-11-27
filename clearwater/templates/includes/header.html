@@ -1,5 +1,4 @@
 {% load menu_tags %}
-{% get_menu "header" as navigation %}
 
 <header>
   <div class="contact-banner green darken-3">
@@ -20,29 +19,9 @@
         <a href="#" data-target="mobile" class="sidenav-trigger right">
           <i class="material-icons dp48 grey-text text-darken-3">menu</i>
         </a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-        {% for item in navigation.menu_items.all %}
-          {% if item.link_anchor %}
-            <li><a href="{{ item.link_anchor }}" class="grey-text text-darken-3">{{ item.link_title }}</a></li>
-          {% elif item.link_url %}
-            <li><a href="{{ item.link_url }}" class="grey-text text-darken-3">{{ item.link_title }}</a></li>
-          {% else %}
-            <li><a href="{{ item.link_page.url }}" class="grey-text text-darken-3">{{ item.link_title }}</a></li>
-          {% endif %}
-        {% endfor %}
-        </ul>
+        {% main_menu max_levels=1 template="menus/material_main_menu.html" %}
       </div>
     </div>
   </nav>
-  <ul class="sidenav" id="mobile">
-    {% for item in navigation.menu_items.all %}
-        {% if item.link_anchor %}
-            <li><a href="{{ item.link_anchor }}" class="grey-text text-darken-3">{{ item.link_title }}</a></li>
-          {% elif item.link_url %}
-            <li><a href="{{ item.link_url }}" class="grey-text text-darken-3">{{ item.link_title }}</a></li>
-          {% else %}
-            <li><a href="{{ item.link_page.url }}" class="grey-text text-darken-3">{{ item.link_title }}</a></li>
-        {% endif %}
-    {% endfor %}
-  </ul>
+  {% main_menu max_levels=1 template="menus/material_main_mobile_menu.html" %}
 </header>

@@ -1,5 +1,4 @@
 {% load menu_tags %}
-{% get_menu "header" as navigation %}
 
 <footer class="green darken-3">
     <div class="container">
@@ -18,17 +17,7 @@
     <div class="col s12 m4 l4">
       <div class="sitemap-container center-align">
         <h5 class="white-text">Sitemap</h5>
-        <ul class="sitemap">
-          {% for item in navigation.menu_items.all %}
-            {% if item.link_anchor %}
-              <li><a href="{{ item.link_anchor }}" class="grey-text text-lighten-3">{{ item.link_title }}</a></li>
-            {% elif item.link_url %}
-              <li><a href="{{ item.link_url }}" class="grey-text text-lighten-3">{{ item.link_title }}</a></li>
-            {% else %}
-              <li><a href="{{ item.link_page.url }}" class="grey-text text-lighten-3">{{ item.link_title }}</a></li>
-            {% endif %}
-          {% endfor %}
-        </ul>
+        {% flat_menu 'footer_menu' max_levels=1 show_menu_heading=False %}
       </div>
     </div>
     <div class="col s12 m4 l4">

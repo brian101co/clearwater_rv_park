@@ -1,0 +1,11 @@
+{% load menu_tags %}
+<ul class="sidenav" id="mobile">
+    {% for item in menu_items %}
+        <li class="{{ item.active_class }}">
+            <a href="{{ item.href }}" class="grey-text text-darken-3">{{ item.text }}</a>
+            {% if item.has_children_in_menu %}
+                {% sub_menu item %}
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
