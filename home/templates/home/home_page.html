@@ -26,7 +26,7 @@
 </section>
 
 <section class="container snowbird" id="welcome">
-  <div class="row" data-aos="slide-left" data-aos-offset="100" data-aos-once="true">
+  <div class="row">
     <h2 class="snowbird-title center-align">Snowbirds Are Welcome Here</h2>
     <h3 class="snowbird-subtitle grey-text text-darken-1 center-align">Quiet Never Sounded So Good</h3>
     <div class="col s12 l6">
@@ -129,18 +129,18 @@
       </p>
 
       <a class="waves-effect waves-light btn green" href="tel:6017498142">Call Now</a>
-
-
     </div>
+
     <div class="col s12 m6">
+      {% with rates=settings.home.SiteSettings %}
       <ul class="collection with-header rates-list">
         <li class="collection-header">
           <h5 class="rates-subtitle">Rates</h5>
         </li>
-        <li class="collection-item grey-text text-darken-2">DAILY: 30/50 amp $32.10</li>
-        <li class="collection-item grey-text text-darken-2">WEEKLY: 30/50 amp $202.00</li>
-        <li class="collection-item grey-text text-darken-2">MONTHLY: 30/50 amp $330.00 metered electric, sewer & water</li>
-        <li class="collection-item grey-text text-darken-2">MONTHLY: $570 includes electric, sewer, & water</li>
+        <li class="collection-item grey-text text-darken-2">DAILY: 30/50 amp ${{ rates.daily_rate }}</li>
+        <li class="collection-item grey-text text-darken-2">WEEKLY: 30/50 amp ${{ rates.weekly_rate }}</li>
+        <li class="collection-item grey-text text-darken-2">MONTHLY: 30/50 amp ${{ rates.monthly_rate }} metered electric, sewer & water</li>
+        <li class="collection-item grey-text text-darken-2">MONTHLY: ${{ rates.monthly_rate_all_included }} includes electric, sewer, & water</li>
         <li class="collection-item grey-text text-darken-2">
           SNOWBIRD, SEASONAL, and LONG-TERM SPECIALS:
           <p>
@@ -148,6 +148,7 @@
           </p>
         </li>
       </ul>
+      {% endwith %}
     </div>
   </div>
 </section>

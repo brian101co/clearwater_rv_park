@@ -1,8 +1,9 @@
 from django.db import models
 
 from wagtail.core.models import Page
-from wagtail.admin.edit_handlers import FieldPanel, PageChooserPanel
+from wagtail.admin.edit_handlers import FieldPanel, PageChooserPanel, MultiFieldPanel
 from wagtailvideos.edit_handlers import VideoChooserPanel
+from wagtail.contrib.settings.models import BaseSetting, register_setting
 
 class HomePage(Page):
     hero_video = models.ForeignKey(
@@ -47,4 +48,46 @@ class HomePage(Page):
         FieldPanel("hero_section_subtitle_text"),
         FieldPanel("cta_button_text"),
         PageChooserPanel("cta_button_link"),
+    ]
+
+@register_setting
+class SiteSettings(BaseSetting):
+    class Meta:
+        verbose_name = "Site Settings"
+    
+    daily_rate = models.DecimalField(
+        max_digits=6, 
+        decimal_places=2,
+        help_text="The daily rate for a single site.",
+        null=True
+    )
+    weekly_rate = models.DecimalField(
+        max_digits=6, 
+        decimal_places=2,
+        help_text="The weekly rate for a single site.",
+        null=True
+    )
+    monthly_rate = models.DecimalField(
+        max_digits=6, 
+        decimal_places=2,
+        help_text="The monthly rate for a single site not including electricity.",
+        null=True
+    )
+    monthly_rate_all_included = models.DecimalField(
+        max_digits=6, 
+        decimal_places=2,
+        help_text="The monthly rate for a single site including electricity.",
+        null=True
+    )
+
+    panels = [
+        MultiFieldPanel(
+            [
+                FieldPanel("daily_rate"),
+                FieldPanel("weekly_rate"),
+                FieldPanel("monthly_rate"),
+                FieldPanel("monthly_rate_all_included")
+            ],
+            "Park Rates"
+        )
     ]
