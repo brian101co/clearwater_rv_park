@@ -6,11 +6,10 @@
     <div class="col s12 m4 l4">
       <div class="contact center-align white-text">
         <h5>Contact Info</h5>
+        <a href="tel:{{ settings.home.SiteSettings.business_phone_number }}" class="white-text" style="text-decoration: underline;">P: {{ settings.home.SiteSettings.business_phone_number }}</a>
         <address>
-          <div>1505 Ceasar Rd.</div>
-          <div>Carriere, MS 39426</div>
+          {{ settings.home.SiteSettings.address|linebreaks }}
         </address>
-        <div>P: 601-749-8142</div>
       </div>
     </div>
     <div class="col s12 m4 l4">

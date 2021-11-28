@@ -119,7 +119,7 @@
     <h2 class="center-align rates-title">Booking and Rates</h2>
     <div class="col s12 m6">
       <p class="rates-body grey-text text-darken-2">
-        Schedule your short or long-term RV getaway by calling 601-749-8142 to make a reservation. Please let us know if you have any questions or concerns for us, we’re happy to help.
+        Schedule your short or long-term RV getaway by calling {{ settings.home.SiteSettings.business_phone_number }} to make a reservation. Please let us know if you have any questions or concerns for us, we’re happy to help.
       </p>
       <p class="rates-body grey-text text-darken-2">
         Rates are based on 1 RV with 2 adults & 2 children under 12 per site with full hookup. $3.00/additional adult or child per night.
@@ -128,7 +128,7 @@
         Prices subject to change.
       </p>
 
-      <a class="waves-effect waves-light btn green" href="tel:6017498142">Call Now</a>
+      <a class="waves-effect waves-light btn green" href="tel:{{ settings.home.SiteSettings.business_phone_number }}">Call Now</a>
     </div>
 
     <div class="col s12 m6">
@@ -144,7 +144,7 @@
         <li class="collection-item grey-text text-darken-2">
           SNOWBIRD, SEASONAL, and LONG-TERM SPECIALS:
           <p>
-            Please Call 601-749-8142 To Obtain Rate Quotes
+            Please Call {{ settings.home.SiteSettings.business_phone_number }} To Obtain Rate Quotes
           </p>
         </li>
       </ul>

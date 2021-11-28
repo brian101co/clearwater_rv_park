@@ -79,6 +79,15 @@ class SiteSettings(BaseSetting):
         help_text="The monthly rate for a single site including electricity.",
         null=True
     )
+    business_phone_number = models.CharField(
+        max_length=20,
+        help_text="Your business phone number.",
+        null=True
+    )
+    address = models.TextField(
+        null=True,
+        help_text="Your business address."
+    )
 
     panels = [
         MultiFieldPanel(
@@ -89,5 +98,12 @@ class SiteSettings(BaseSetting):
                 FieldPanel("monthly_rate_all_included")
             ],
             "Park Rates"
+        ),
+        MultiFieldPanel(
+            [
+                FieldPanel("business_phone_number"),
+                FieldPanel("address"),
+            ],
+            "Business Information"
         )
     ]
