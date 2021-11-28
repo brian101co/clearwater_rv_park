@@ -1,0 +1,2 @@
+DEPLOYMENT
+-- After deploying, change manage.py command to look in production settings
