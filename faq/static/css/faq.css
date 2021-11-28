@@ -2,6 +2,18 @@
 .collapsible-body {
     font-size: 1.2rem;
 }
+.collapsible-header {
+    display: flex;
+    align-items: center;
+}
+.collapsible-header .bi-caret-right-fill {
+    margin-right: 12px;
+    transition: transform 300ms;
+}
+.collapsible-header.open .bi-caret-right-fill{
+    transform: rotate(90deg);
+} 
+
 @media(max-width: 960px) {
     .main-title {
         font-size: 3rem;

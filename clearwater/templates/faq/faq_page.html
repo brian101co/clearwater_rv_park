@@ -25,7 +25,14 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         var elems = document.querySelectorAll('.collapsible.popout');
-        var instances = M.Collapsible.init(elems);
+        var instances = M.Collapsible.init(elems, {
+            onOpenStart: function(el) {
+                const header = el.querySelector(".collapsible-header").classList.add("open")
+            },
+            onCloseStart: function(el) {
+                const header = el.querySelector(".collapsible-header").classList.remove("open")
+            }
+        });
     });
 </script>
 {% endblock %}
