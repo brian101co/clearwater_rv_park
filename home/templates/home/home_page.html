@@ -15,8 +15,10 @@
     <p class="grey-text text-lighten-2 hero-subtitle">{{ page.hero_section_subtitle_text }}</p>
     <a class="waves-effect waves-light btn green" href="#welcome">Learn More</a>
   </div>
-  {% video page.hero_video autoplay=true playsinline=true muted=true loop=true id=video %}
-  <!-- <video id="video" autoplay="true" muted="true" loop="true" playsinline poster="{% static 'img/waterwheel.jpg' %}">
+  {% if page.hero_video %}
+    {% video page.hero_video autoplay=true playsinline=true muted=true loop=true id=video %}
+  {% endif %}
+    <!-- <video id="video" autoplay="true" muted="true" loop="true" playsinline poster="{% static 'img/waterwheel.jpg' %}">
     <source src="{% static 'media/clearwater_banner_video.mp4' %}" type="video/mp4" />
     <source src="{% static 'media/clearwater_banner_video.webm' %}" type="video/webm" />
   </video> -->
