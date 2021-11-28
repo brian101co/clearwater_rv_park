@@ -2,8 +2,17 @@ from django.db import models
 
 from wagtail.core.models import Page
 from wagtail.admin.edit_handlers import FieldPanel, PageChooserPanel
+from wagtailvideos.edit_handlers import VideoChooserPanel
 
 class HomePage(Page):
+    hero_video = models.ForeignKey(
+        "wagtailvideos.Video",
+        related_name="+",
+        null=True,
+        on_delete=models.SET_NULL,
+        help_text="Background Video for the homepage hero section."
+    )
+
     hero_section_text = models.CharField(
         max_length=255,
         blank=True,
@@ -33,6 +42,7 @@ class HomePage(Page):
     )
 
     content_panels = Page.content_panels + [
+        VideoChooserPanel("hero_video"),
         FieldPanel("hero_section_text"),
         FieldPanel("hero_section_subtitle_text"),
         FieldPanel("cta_button_text"),

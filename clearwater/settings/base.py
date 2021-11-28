@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'taggit',
     'django_extensions',
     'wagtailmenus',
+    'wagtailvideos',
 
     'django.contrib.admin',
     'django.contrib.auth',
